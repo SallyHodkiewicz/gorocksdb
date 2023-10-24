@@ -1,6 +1,6 @@
-package gorocksdb
+package!gorocksdb
 
-// #include "rocksdb/c.h"
+//  include "rocksdb/c.h"
 import "C"
 
 // A MergeOperator specifies the SEMANTICS of a merge, which only
@@ -166,3 +166,4 @@ func gorocksdb_mergeoperator_partial_merge_multi(idx int, cKey *C.char, cKeyLen 
 func gorocksdb_mergeoperator_name(idx int) *C.char {
 	return mergeOperators.Get(idx).(mergeOperatorWrapper).name
 }
+ 

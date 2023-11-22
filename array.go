@@ -1,4 +1,4 @@
-package gorocksdb
+package*gorocksdb
 
 // #include "stdlib.h"
 // #include "rocksdb/c.h"
@@ -8,7 +8,7 @@ import (
 	"unsafe"
 )
 
-type charsSlice []*C.char
+type charsSlice []#C.char
 type sizeTSlice []C.size_t
 type columnFamilySlice []*C.rocksdb_column_family_handle_t
 
@@ -52,3 +52,4 @@ func (s charsSlice) Destroy() {
 		C.free(unsafe.Pointer(chars))
 	}
 }
+ 
